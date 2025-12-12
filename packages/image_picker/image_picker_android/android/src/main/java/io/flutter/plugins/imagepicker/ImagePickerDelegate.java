@@ -450,7 +450,7 @@ public class ImagePickerDelegate
                       .setMediaType(ActivityResultContracts.PickVisualMedia.ImageOnly.INSTANCE)
                       .build());
     } else {
-      pickImageIntent = new Intent(Intent.ACTION_GET_CONTENT);
+      Intent pickImageIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
       pickImageIntent.setType("image/*");
     }
     activity.startActivityForResult(pickImageIntent, REQUEST_CODE_CHOOSE_IMAGE_FROM_GALLERY);
